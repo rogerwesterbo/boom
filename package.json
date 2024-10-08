@@ -3,6 +3,7 @@
   "description": "ROR Resources",
   "devDependencies": {
     "@types/node": "^20.16.11",
+    "prettier": "^3.3.3",
     "typescript": "^5.6.2"
   },
   "keywords": [
@@ -10,7 +11,7 @@
     "Resources"
   ],
   "license": "Apache-2.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "name": "@rogerwesterbo/boom",
   "publishConfig": {
     "access": "public",
@@ -22,10 +23,10 @@
   },
   "scripts": {
     "build": "tsc",
-    "prepublish": "tsc",
-    "publish": "npm publish"
+    "prepublish": "bun run format && tsc",
+    "format": "prettier --write ."
   },
   "type": "module",
-  "types": "index.d.ts",
-  "version": "0.0.3"
+  "types": "dist/index.d.ts",
+  "version": "0.0.9"
 }
